@@ -1,6 +1,5 @@
-$font-size:16px;
-$font-color: #f60;
+$mtop: 1rem;
 
-p{
-  color:$font-color;
+.margin-default-top{
+  margin-top:$mtop;
 }
