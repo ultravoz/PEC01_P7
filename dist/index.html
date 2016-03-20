@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PEC01_P7</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body ng-app="conversorModel">
+    <div ng-controller="conversor-box" class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><h2>Conversor de moneda</h2></div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label for="cantidad">Cantidad</label>
+                            <input type="text" class="form-control" ng-model="moneyIn" placeholder="Ingrese la cantidad a convertir">
+                        </div><!-- /input-group -->
+                        <div class="form-group">
+                            <label for="origen">Origen</label>
+                            <select class="form-control" ng-options="origen.value as origen.label for origen in valorOrigen" ng-model="origen" >
+                                <option style="display:none" value="">-</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="destino">Destino</label>
+                            <select class="form-control" ng-options="destino.value as destino.label for destino in valorDestino" ng-model="destino">
+                                <option style="display:none" value="">-</option>
+                            </select>
+                        </div>
+                        <h3>Resultado de la conversión: <strong>{{ (( origen ) * ( moneyIn )) * ( destino ) | number:2  }}</strong> </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="js/all.min.js"></script>
+</body>
+</html>
