@@ -1,7 +1,7 @@
 var conversor = angular.module('conversorModel', []);
 
 conversor.controller('conversor-box',[ '$scope', function ($scope) {
-    $scope.moneyIn = 0;
+    $scope.moneyIn = "";
     $scope.origen = "";
     $scope.destino = "";
 
@@ -19,8 +19,10 @@ conversor.controller('conversor-box',[ '$scope', function ($scope) {
             label: "GBP"
         },
     ];
+    //$scope.origen = $scope.valorOrigen[0].value;
 
     $scope.valorDestino = [
+
         {
             value: "1",
             label: "EUR"
@@ -34,5 +36,6 @@ conversor.controller('conversor-box',[ '$scope', function ($scope) {
             label: "GBP"
         },
     ];
+    //$scope.destino = $scope.valorDestino[0].value;
 
 }]);
